@@ -3,7 +3,7 @@
 ### Use img.txt, easy get text content from image, and You can use iPhone as OCR server, it provides a POST API to receive image and return OCR result directly.
 [Available on App Store](https://apps.apple.com/us/app/img-txt/id1662261112?l=zh)
 
-[简体中文说明](/Readme.zh-Hans.md)
+[简体中文说明](./Readme.zh-Hans.md)
 # ocrclients
 Ocr client demos for img.txt.
 
