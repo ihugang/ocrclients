@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"mime/multipart"
 	"net/http"
 	"os"
@@ -87,7 +86,7 @@ func postFile(filename string) {
 	defer res.Body.Close()
 
 	// Read the response
-	content, err := ioutil.ReadAll(res.Body)
+	content, err := io.ReadAll(res.Body)
 	if err != nil {
 		fmt.Println("Error reading response: ", err)
 		return
@@ -101,7 +100,7 @@ func postFile(filename string) {
 	if ocr.Success {
 		// Write the response to a file
 		outFile := strings.Replace(filename, filepath.Ext(filename), ".txt", 1)
-		err = ioutil.WriteFile(outFile, []byte(ocr.Text), 0644)
+		err = os.WriteFile(outFile, []byte(ocr.Text), 0644)
 		if err != nil {
 			fmt.Println("Error writing response: ", err)
 			return
